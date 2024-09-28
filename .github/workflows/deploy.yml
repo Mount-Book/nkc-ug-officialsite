@@ -39,6 +39,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: 404 Page
+        run: cp ./404.html ./public/404.html　
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
