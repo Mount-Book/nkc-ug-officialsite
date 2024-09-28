@@ -5,7 +5,7 @@ import { Footer } from "../components/Footer";
 export const SiteAbout = () => {
   const headingStyle = { borderBottom: "thick double #32a1ce" };
   return (
-    <Box>
+    <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Header />
       <Box sx={{ textAlign: "center" }}>
         <Typography variant="h4" sx={headingStyle}>

@@ -1,4 +1,4 @@
-import { Box, List, ListItem, Typography } from "@mui/material";
+import { Box, Link, List, ListItem, Typography } from "@mui/material";
 
 //行動規範
 export const CodeOfConduct = () => {
@@ -42,6 +42,51 @@ export const CodeOfConduct = () => {
             NKC-UGは、いかなる反社会的勢力とも一切関係を持ちません。コミュニティへの参加・登壇・協力等の関係者が反社会的勢力であることが判明した場合には、その関係解消に向け適切な措置をすみやかに講じます。
           </ListItem>
         </List>
+      </Box>
+      <Box sx={{ padding: 2 }}>
+        <Typography variant="h5">アンチハラスメントポリシー</Typography>
+        <Typography>
+          イベントに参加するみなさんは以下のポリシーを遵守するように心がけて
+          ください。
+          <br />
+          ハラスメント行為には下記のことが含まれますが、これらに限定はされません。
+        </Typography>
+        <List sx={{ width: "fit-content", margin: "auto" }}>
+          <ListItem>
+            社会的構造などの不適切なコメント（性別、性同一性と表現、性的指向、障がい、身体的
+            外観、体格、人種、年齢、宗教）
+          </ListItem>
+          <ListItem>脅迫、つきまとい、ストーカー行為</ListItem>
+          <ListItem>不適切な画像、動画、録音。またはその再生</ListItem>
+          <ListItem>
+            発表やその他のイベントに対する妨害行為 不適切な身体的接触
+          </ListItem>
+          <ListItem>
+            特定の技術・サービス・企業・個人に対する否定や誹謗中傷など攻撃的な発言や行為
+          </ListItem>
+          <ListItem>上記の行動のいずれかを支持または奨励する行為</ListItem>
+        </List>
+        <Typography>
+          スポンサーや登壇者、主催スタッフもこのポリシーの対象となります。
+          <br />
+          ポリシーに違反する言葉や
+          画像などのメディアはいかなる発表やワークショップ、Twitterのようなオンラインメディアにおいて
+          も不適切です。
+          <br />
+          ※もしハラスメントを受けていると感じたり、他の誰かがハラスメントされていることに気がついた
+          場合、または他に何かお困りのことがあれば、すぐに運営までご連絡ください。
+          <br />
+          運営で迅速に適切
+          な対応をとり、みなさんが安心してコミュニティイベントに参加できるよう最善を尽くします。
+          <br />
+          連絡先：
+          <Link href="mailto:nkcugdp@gmail.com">nkcugdp@gmail.com </Link>
+          (NKC-UG運営)
+        </Typography>
+        <Typography>
+          このアンチハラスメントポリシーは「Geek Feminism
+          Wiki」を元に作成しています
+        </Typography>
       </Box>
     </Box>
   );

@@ -5,7 +5,11 @@ export const Footer = () => {
     <AppBar
       component="footer"
       position="static"
-      sx={{ padding: 2, backgroundColor: "rgb(192,192,192)" }}
+      sx={{
+        padding: 2,
+        backgroundColor: "rgb(192,192,192)",
+        marginTop: "auto",
+      }}
     >
       <Container>
         <Box sx={{ textAlign: "center" }}>

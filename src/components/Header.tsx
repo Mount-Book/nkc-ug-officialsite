@@ -49,17 +49,17 @@ export const Header = () => {
             },
           }}
         >
-          {PAGE_LINK.map((value) => {
+          {PAGE_LINK.map((value, key) => {
             return (
               <Button
                 onClick={() => {
                   nav(value.link);
                 }}
                 sx={{
-                  paddingRight: 2,
-                  marginRight: 2,
+                  padding: 2,
                   color: "rgb(255,255,255)",
                 }}
+                key={key}
               >
                 {value.name}
               </Button>
@@ -84,7 +84,7 @@ export const Header = () => {
             }}
           >
             <Hamburger toggled={isOpen} toggle={setOpen} />
-            {PAGE_LINK.map((value) => {
+            {PAGE_LINK.map((value, key) => {
               return (
                 <Button
                   onClick={() => {
@@ -94,6 +94,7 @@ export const Header = () => {
                     margin: 3,
                     color: "rgb(0,0,0)",
                   }}
+                  key={key}
                 >
                   {value.name}
                 </Button>

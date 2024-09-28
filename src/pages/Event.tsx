@@ -4,10 +4,9 @@ import { Footer } from "../components/Footer";
 
 export const Event = () => {
   return (
-    <Box>
+    <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
       <Header />
-      <Typography variant="h2">イベント一覧</Typography>
-      <Box>
+      <Box textAlign="center" margin="auto">
         <Typography variant="h5">
           現在予定されているイベントはありません
         </Typography>
