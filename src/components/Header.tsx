@@ -1,17 +1,40 @@
 // src/components/Header.jsx
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import { Box, Link } from "@mui/material";
+import { Box, Button, Drawer, Link } from "@mui/material";
 import nkcugLogo from "../assets/NKCUG_DP.svg";
+import { Divide as Hamburger } from "hamburger-react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
+  const [isOpen, setOpen] = useState(false);
+  const nav = useNavigate();
+  const PAGE_LINK = [
+    { name: "トップへ", link: "/" },
+    { name: "本サイトについて", link: "/SiteAbout" },
+    { name: "アカウント一覧", link: "/Account" },
+    { name: "イベント一覧", link: "/Event" },
+    { name: "入部希望者向け", link: "/Welcome" },
+  ];
   return (
     <AppBar
       position="static"
-      sx={{ padding: 0, backgroundColor: "rgb(192,192,192)" }}
+      sx={{
+        padding: 0,
+        backgroundColor: "rgb(192,192,192)",
+        textAlign: "left",
+      }}
     >
       <Toolbar>
-        <Link href="/" color="inherit" underline="none" sx={{ flexGrow: 1 }}>
+        <Link
+          href="/"
+          color="inherit"
+          underline="none"
+          sx={{
+            flexGrow: 1,
+          }}
+        >
           <Box
             component="img"
             src={nkcugLogo}
@@ -19,14 +42,65 @@ export const Header = () => {
             style={{ height: "40px" }}
           />
         </Link>
-        <Link
-          href="https://linktr.ee/nkc_ug"
-          color="inherit"
-          underline="none"
-          target="_blank"
+        <Box
+          sx={{
+            "@media screen and (max-width:930px)": {
+              display: "none",
+            },
+          }}
         >
-          Account
-        </Link>
+          {PAGE_LINK.map((value) => {
+            return (
+              <Button
+                onClick={() => {
+                  nav(value.link);
+                }}
+                sx={{
+                  paddingRight: 2,
+                  marginRight: 2,
+                  color: "rgb(255,255,255)",
+                }}
+              >
+                {value.name}
+              </Button>
+            );
+          })}
+        </Box>
+        <Box
+          sx={{
+            "@media screen and (min-width:931px)": {
+              display: "none",
+            },
+          }}
+        >
+          <Hamburger toggled={isOpen} toggle={setOpen} />
+          <Drawer
+            open={isOpen}
+            anchor="right"
+            sx={{
+              "@media screen and (min-width:931px)": {
+                display: "none",
+              },
+            }}
+          >
+            <Hamburger toggled={isOpen} toggle={setOpen} />
+            {PAGE_LINK.map((value) => {
+              return (
+                <Button
+                  onClick={() => {
+                    nav(value.link);
+                  }}
+                  sx={{
+                    margin: 3,
+                    color: "rgb(0,0,0)",
+                  }}
+                >
+                  {value.name}
+                </Button>
+              );
+            })}
+          </Drawer>
+        </Box>
       </Toolbar>
     </AppBar>
   );

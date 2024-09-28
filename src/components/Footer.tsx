@@ -5,9 +5,9 @@ export const Footer = () => {
     <AppBar
       component="footer"
       position="static"
-      sx={{ backgroundColor: "rgb(192,192,192)" }}
+      sx={{ padding: 2, backgroundColor: "rgb(192,192,192)" }}
     >
-      <Container maxWidth="md">
+      <Container>
         <Box sx={{ textAlign: "center" }}>
           <Typography variant="caption">©2024 NKC-UG</Typography>
         </Box>

@@ -1,7 +1,7 @@
-import { Toppage } from "./pages/Toppage";
+import { Routers } from "./routes/Routers";
 
 function App() {
-  return <Toppage />;
+  return <Routers />;
 }
 
 export default App;
